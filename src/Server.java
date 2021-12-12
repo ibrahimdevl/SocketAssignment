@@ -21,6 +21,11 @@ public class Server {
 
         // todo: implement the scenario
 
+        //recieve the message from the client
+        String msg = inServer.readLine();
+        msg = msg.replaceAll("[aeiou]", "");
+        //send the message to the client
+        outServer.println(msg);
         // Close in / out
         inServer.close();
         outServer.close();
