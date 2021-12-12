@@ -21,7 +21,15 @@ public class Client {
         PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
         // todo: implement the scenario
+        //read a message
+        System.out.println("Enter your msg");
+        String msg = new Scanner(System.in).nextLine();
+        //send the message to the server
+        outClient.println(msg);
 
+        //recieve the message from the client
+        msg = inClient.readLine();
+        System.out.println(msg);
         //close in / out
         inClient.close();
         outClient.close();
